@@ -21,5 +21,8 @@ public class AddressesPage {
         creatingNewAddressBtn.click();
         return new AddressesPage(driver);
     }
-    
+    public boolean messageAlert(){
+        return successAlert.isDisplayed();
+    }
+
 }

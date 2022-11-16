@@ -23,8 +23,6 @@ public class AddAddressPage {
     @FindBy(id = "field-phone")
     private WebElement phoneInput;
 
-    @FindBy(id = "field-id_country")
-    private WebElement countryInput;
 
     @FindBy(css = "button.btn")
     private WebElement saveBtn;
@@ -35,7 +33,7 @@ public class AddAddressPage {
         PageFactory.initElements(driver,this);
     }
 
-    public AddAddressPage creatingAddress(String alias,String address,String city,String postcode,String phone,String country){
+    public AddAddressPage creatingAddress(String alias,String address,String city,String postcode,String phone){
         aliasInput.clear();
         aliasInput.sendKeys(alias);
         addressInput.clear();
@@ -46,10 +44,12 @@ public class AddAddressPage {
         postalCodeInput.sendKeys(postcode);
         phoneInput.clear();
         phoneInput.sendKeys(phone);
-        countryInput.clear();
-        countryInput.sendKeys(country);
-        saveBtn.click();
+
         return new  AddAddressPage(driver);
+    }
+    public AddAddressPage acceptingCreation(){
+        saveBtn.click();
+        return new AddAddressPage(driver);
     }
 
 }

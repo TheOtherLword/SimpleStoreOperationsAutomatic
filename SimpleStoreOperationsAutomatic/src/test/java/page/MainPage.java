@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class MainPage {
     private WebDriver driver;
 
-    @FindBy(className = "hidden-sm-down")
+    @FindBy(css = ".user-info > a:nth-child(1) > span:nth-child(2)")
     private WebElement signInBtn;
 
     public MainPage(WebDriver driver){
