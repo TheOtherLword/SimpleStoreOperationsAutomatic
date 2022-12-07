@@ -37,7 +37,6 @@ public class AddressesPage {
     }
     public void deletingNewAddedAddress(){
         deleteBtn.click();
-       // return new AddressesPage(driver);
     }
     public WebElement getAddress() {
         return address;

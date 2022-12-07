@@ -24,7 +24,6 @@ public class ShippingMethodPage {
     public void choosingShipmentMethod(){
         carrierDeliveryMethodBtn.click();
         pickUpMethodBtn.click();
-      //  return new ShippingMethodPage(driver);
     }
     public PaymentPage goToPayment(){
         continueBtn.click();

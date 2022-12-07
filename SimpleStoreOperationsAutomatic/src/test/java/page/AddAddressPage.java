@@ -23,7 +23,6 @@ public class AddAddressPage {
     @FindBy(id = "field-phone")
     private WebElement phoneInput;
 
-
     @FindBy(css = "button.btn")
     private WebElement saveBtn;
 
@@ -44,8 +43,6 @@ public class AddAddressPage {
         postalCodeInput.sendKeys(postcode);
         phoneInput.clear();
         phoneInput.sendKeys(phone);
-
-       // return new  AddAddressPage(driver);
     }
     public AddressesPage acceptingCreation(){
         saveBtn.click();

@@ -24,9 +24,9 @@ public class CartPage {
         checkingOutBtn.click();
         return new  CartPage(driver);
     }
-    public CartPage goingToShipment(){
+    public ShippingMethodPage goingToShipment(){
         continueBtn.click();
-        return new CartPage(driver);
+        return new ShippingMethodPage(driver);
     }
     public WebElement getAddress(){
         return address;

@@ -28,26 +28,23 @@ public class ItemPage {
     public void selectingItemSize(String size){
         sizeBox.click();
         sizeBox.sendKeys(size);
-     //   return new ItemPage(driver);
     }
     public void itemNumber(String number){
         int quantity = Integer.parseInt(number);
         for(int i=1;i<quantity;i++){
             quantityIncreaseBtn.click();
         }
-      //  return new ItemPage(driver);
     }
 
-    public ItemPage addToCart(){
+    public void addToCart(){
         addToCartBtn.click();
-        return new ItemPage(driver);
     }
     public WebElement getDiscount(){
         return discount;
     }
 
-    public ItemPage checkingOut(){
+    public CartPage checkingOut(){
         goingToCheckOutBtn.click();
-        return new ItemPage(driver);
+        return new CartPage(driver);
     }
 }

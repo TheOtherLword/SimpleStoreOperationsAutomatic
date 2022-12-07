@@ -25,15 +25,14 @@ public class PaymentPage {
     public void choosingPaymentOption(){
         //payByBankWireBtn.click();
         payByCheckBtn.click();
-       // return new PaymentPage(driver);
     }
 
     public void agreeingToTerms(){
         agreeToTermsBtn.click();
-     //   return new PaymentPage(driver);
+
     }
     public void placingOrder(){
         placeOrderBtn.click();
-       // return new PaymentPage(driver);
+
     }
 }
