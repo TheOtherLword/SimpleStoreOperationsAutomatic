@@ -10,13 +10,21 @@ public class UserPage {
     @FindBy(id = "addresses-link")
     private WebElement addressesBtn;
 
+    @FindBy(id = "_desktop_logo")
+    private WebElement goToMainPageBtn;
+
     public UserPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
 
-    public UserPage showingAddresses(){
+    public AddressesPage showingAddresses(){
         addressesBtn.click();
-        return new UserPage(driver);
+        return new AddressesPage(driver);
     }
+    public MainPage goingBackToMainPage(){
+        goToMainPageBtn.click();
+        return new MainPage(driver);
+    }
+
 }

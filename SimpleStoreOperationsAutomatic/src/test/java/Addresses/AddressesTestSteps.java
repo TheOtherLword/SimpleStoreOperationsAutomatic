@@ -15,6 +15,7 @@ import page.*;
 public class AddressesTestSteps {
 
     WebDriver driver;
+    String teststring = "Test Testing" +"\n"+"Test Street"+"\n" +"Testopolis" +"\n"+"12-123" +"\n"+"United Kingdom"+"\n" +"123456789";
 
     @Given("Web page MyStore is open in Chrome browser")
     public void openMyStoreInBrowser(){
@@ -56,5 +57,24 @@ public class AddressesTestSteps {
     public void checkingIfMessageIsDisplayed(){
         AddressesPage addressesPage = new AddressesPage(driver);
         Assertions.assertTrue(addressesPage.messageAlert());
+        Assertions.assertEquals("Address successfully added!",addressesPage.alertMsg());
+    }
+      @And("I verify created address")
+    public void checkingIcCreatedAddressIsCorrect(){
+        AddressesPage addressesPage = new AddressesPage(driver);
+        Assertions.assertEquals(teststring,addressesPage.getAddress().getText());
+    }
+
+    @And("I remove address by clicking on Delete button")
+    public void deletingCreatedAddress(){
+        AddressesPage addressesPage = new AddressesPage(driver);
+        addressesPage.deletingNewAddedAddress();
+    }
+    @And("I see Address successfully deleted! message")
+    public void checkingIfMessageIsDisplayedAgain(){
+        AddressesPage addressesPage = new AddressesPage(driver);
+        Assertions.assertTrue(addressesPage.messageAlert());
+        Assertions.assertEquals("Address successfully deleted!",addressesPage.alertMsg());
+
     }
 }

@@ -33,7 +33,7 @@ public class AddAddressPage {
         PageFactory.initElements(driver,this);
     }
 
-    public AddAddressPage creatingAddress(String alias,String address,String city,String postcode,String phone){
+    public void creatingAddress(String alias,String address,String city,String postcode,String phone){
         aliasInput.clear();
         aliasInput.sendKeys(alias);
         addressInput.clear();
@@ -45,11 +45,11 @@ public class AddAddressPage {
         phoneInput.clear();
         phoneInput.sendKeys(phone);
 
-        return new  AddAddressPage(driver);
+       // return new  AddAddressPage(driver);
     }
-    public AddAddressPage acceptingCreation(){
+    public AddressesPage acceptingCreation(){
         saveBtn.click();
-        return new AddAddressPage(driver);
+        return new AddressesPage(driver);
     }
 
 }

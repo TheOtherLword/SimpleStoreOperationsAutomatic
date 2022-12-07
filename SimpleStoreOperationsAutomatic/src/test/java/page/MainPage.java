@@ -18,14 +18,14 @@ public class MainPage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
-    public MainPage goToSignInPage(){
+    public LoginPage goToSignInPage(){
         signInBtn.click();
-        return new MainPage(driver);
+        return new LoginPage(driver);
     }
 
-    public MainPage goToItemPage(){
+    public ItemPage goToItemPage(){
         Item.click();
-        return new MainPage(driver);
+        return new ItemPage(driver);
     }
 
 }

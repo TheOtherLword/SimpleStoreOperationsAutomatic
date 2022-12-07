@@ -20,12 +20,12 @@ public class LoginPage {
         PageFactory.initElements(driver,this);
     }
 
-    public LoginPage loggingIn(String email,String password){
+    public UserPage loggingIn(String email,String password){
         emailInput.clear();
         emailInput.sendKeys(email);
         passwordInput.clear();
         passwordInput.sendKeys(password);
         signInBtn.click();
-        return new LoginPage(driver);
+        return new UserPage(driver);
     }
 }
